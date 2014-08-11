@@ -1,0 +1,14 @@
+#
+# init.sony-device.rc
+#
+import init.sony-platform.rc
+
+# CTA
+service cta /system/bin/cta_server
+    user root
+    group root
+    class main
+    disabled
+
+on property:ro.semc.enable.china_miit=true
+    start cta
