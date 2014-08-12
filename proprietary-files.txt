@@ -265,10 +265,6 @@ vendor/lib/lib-imsxml.so
 bin/irsc_util
 etc/sec_config
 
-# Keylayout
-usr/keylayout/gpio-keys.kl
-usr/keylayout/msm8226-tapan-snd-card_Button_Jack.kl
-
 # Lights
 lib/hw/lights.default.so:lib/hw/vendor-lights.default.so
 lib/liblights-core.so
