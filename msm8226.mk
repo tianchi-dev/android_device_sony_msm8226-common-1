@@ -258,9 +258,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Radio and Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
     ril.subscription.types=NV,RUIM \
+    persist.radio.msgtunnel.start=false
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.radio.msgtunnel.start=false
     rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 
 # Audio
