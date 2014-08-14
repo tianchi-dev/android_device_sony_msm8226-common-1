@@ -259,3 +259,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/msm8226-common/msm8226-common-vendor.mk)
+
+# Include QCOM vendor files
+$(call inherit-product, vendor/sony/msm8226-common/qcom-common-vendor.mk)
