@@ -135,36 +135,103 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-# QCOM Display
+# Display
 PRODUCT_PACKAGES += \
-    hwcomposer.msm8226 \
-    gralloc.msm8226 \
-    copybit.msm8226 \
-    memtrack.msm8226
+	copybit.msm8226 \
+	gralloc.msm8226 \
+	hwcomposer.msm8226 \
+	memtrack.msm8226 \
+	liboverlay
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_policy.msm8226 \
-    libaudio-resampler \
-    libaudioparameter \
-    libqcomvisualizer \
-    libqcompostprocbundle \
-    libqcomvoiceprocessing \
-    tinycap \
-    tinymix \
-    tinypcminfo \
-    tinyplay
+	audiod \
+	audio.a2dp.default \
+	audio.primary.msm8226 \
+	audio.r_submix.default \
+	audio.usb.default \
+	audio_policy.msm8226
+
+PRODUCT_PACKAGES += \
+	libaudio-resampler \
+	libqcompostprocbundle \
+	libqcomvisualizer \
+	libqcomvoiceprocessing \
+	tinymix
 
 # Camera
 PRODUCT_PACKAGES += \
     camera.sony \
     camera.msm8226 \
     libmmcamera_interface \
-    libmmcamera_interface2
+    libmmcamera_interface2 \
+    libxml2
+    
+# CRDA
+PRODUCT_PACKAGES += \
+	crda \
+	linville.key.pub.pem \
+	regdbdump \
+	regulatory.bin
+	
+# FM
+PRODUCT_PACKAGES += \
+	FM2 \
+	FMRecord \
+	libqcomfm_jni \
+	qcom.fmradio
+
+# GPS
+PRODUCT_PACKAGES += \
+	gps.msm8226
+	
+# Lights
+PRODUCT_PACKAGES += \
+	lights.msm8226
 
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8226
+    
+# OMX
+PRODUCT_PACKAGES += \
+	libc2dcolorconvert \
+	libdashplayer \
+	libdivxdrmdecrypt \
+	libOmxAacEnc \
+	libOmxAmrEnc \
+	libOmxCore \
+	libOmxEvrcEnc \
+	libOmxQcelp13Enc \
+	libOmxVdec \
+	libOmxVdecHevc \
+	libOmxVenc \
+	libstagefrighthw \
+	qcmediaplayer
+
+PRODUCT_BOOT_JARS += \
+	qcmediaplayer
+
+# Power
+PRODUCT_PACKAGES += \
+	power.msm8226
+
+# QRNG
+PRODUCT_PACKAGES += \
+	qrngd \
+	qrngp
+	
+# Wifi
+PRODUCT_PACKAGES += \
+	hostapd.accept \
+	hostapd.deny \
+	hostapd_default.conf
+
+PRODUCT_PACKAGES += \
+	libcurl \
+	libqsap_sdk \
+	libQWiFiSoftApCfg \
+	wcnss_service
 
 # Wifi services
 #PRODUCT_PACKAGES += \
@@ -191,9 +258,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Radio and Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
     ril.subscription.types=NV,RUIM \
-    persist.radio.msgtunnel.start=false
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.radio.msgtunnel.start=false
     rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 
 # Audio
